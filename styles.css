@@ -16,7 +16,9 @@ header {
     color: white;
     padding: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
 .header-content {
@@ -28,20 +30,31 @@ header {
 }
 
 .header-image {
-    width: 60px; /* Tamaño reducido */
+    width: 60px;
     height: 60px;
-    border-radius: 50%; /* Forma circular opcional */
-    object-fit: cover; /* Asegura que la imagen se vea bien en el espacio */
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .header-text h1 {
     margin: 0;
-    font-size: 1.8rem; /* Tamaño ajustado para equilibrio */
+    font-size: 1.8rem;
 }
 
 .header-text p {
     margin: 5px 0 0;
     font-size: 1rem;
+}
+
+.visit-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
 }
 
 section#promos {

@@ -17,3 +17,16 @@ function copyCode(code) {
     // Alerta o mensaje para el usuario
     alert("¡Código copiado! Usa el código " + code);
 }
+
+function updateVisitCount() {
+    // Incrementa el contador de visitas en localStorage
+    const visitCount = localStorage.getItem('visitCount') || 0;
+    const newCount = parseInt(visitCount) + 1;
+    localStorage.setItem('visitCount', newCount);
+
+    // Muestra el contador en la página
+    document.getElementById('visitCount').textContent = newCount;
+}
+
+// Actualiza el contador al cargar la página
+document.addEventListener('DOMContentLoaded', updateVisitCount);
