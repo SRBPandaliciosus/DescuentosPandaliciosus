@@ -28,9 +28,10 @@ header {
 }
 
 .header-image {
-    width: 50px; /* Tamaño reducido */
-    height: 50px;
+    width: 60px; /* Tamaño reducido */
+    height: 60px;
     border-radius: 50%; /* Forma circular opcional */
+    object-fit: cover; /* Asegura que la imagen se vea bien en el espacio */
 }
 
 .header-text h1 {
