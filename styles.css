@@ -57,67 +57,56 @@ header {
     font-size: 14px;
 }
 
-#categories {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.category-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.category-button {
-    display: inline-block;
-    padding: 20px 40px;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    color: white;
+section#promos {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-/* Colores específicos por categoría */
-.category-button.bancos {
-    background-color: #4caf50; /* Verde */
+.promo {
+    background-color: #f8f9fa;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.category-button.bancos:hover {
-    background-color: #388e3c;
-    transform: scale(1.05);
+.promo h3 {
+    color: #007bff;
 }
 
-.category-button.tarjetas {
-    background-color: #2196f3; /* Azul */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-.category-button.tarjetas:hover {
-    background-color: #1976d2;
-    transform: scale(1.05);
+button:hover {
+    background-color: #218838;
 }
 
-.category-button.redes-sociales {
-    background-color: #ff5722; /* Naranja */
+.link-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-block;
 }
 
-.category-button.redes-sociales:hover {
-    background-color: #e64a19;
-    transform: scale(1.05);
-}
-
-.category-button.juegos {
-    background-color: #9c27b0; /* Morado */
-}
-
-.category-button.juegos:hover {
-    background-color: #7b1fa2;
-    transform: scale(1.05);
+.link-button:hover {
+    background-color: #0056b3;
 }
 
 footer {
