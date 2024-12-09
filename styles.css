@@ -57,56 +57,67 @@ header {
     font-size: 14px;
 }
 
-section#promos {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#categories {
+    text-align: center;
+    margin: 40px 0;
 }
 
-.promo {
-    background-color: #f8f9fa;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.category-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.promo h3 {
-    color: #007bff;
-}
-
-button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-.link-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    text-decoration: none;
+.category-button {
     display: inline-block;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.link-button:hover {
-    background-color: #0056b3;
+/* Colores específicos por categoría */
+.category-button.bancos {
+    background-color: #4caf50; /* Verde */
+}
+
+.category-button.bancos:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+.category-button.tarjetas {
+    background-color: #2196f3; /* Azul */
+}
+
+.category-button.tarjetas:hover {
+    background-color: #1976d2;
+    transform: scale(1.05);
+}
+
+.category-button.redes-sociales {
+    background-color: #ff5722; /* Naranja */
+}
+
+.category-button.redes-sociales:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+.category-button.juegos {
+    background-color: #9c27b0; /* Morado */
+}
+
+.category-button.juegos:hover {
+    background-color: #7b1fa2;
+    transform: scale(1.05);
 }
 
 footer {
