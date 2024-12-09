@@ -57,6 +57,13 @@ header {
     font-size: 14px;
 }
 
+.go-home {
+    width: 60px;
+    height: 70px;
+    border-radius: 25%;
+    object-fit: cover;
+}
+
 #categories {
     text-align: center;
     margin: 40px 0;
@@ -93,11 +100,11 @@ header {
     transform: scale(1.05);
 }
 
-.category-button.tarjetas {
+.category-button.compras {
     background-color: #2196f3; /* Azul */
 }
 
-.category-button.tarjetas:hover {
+.category-button.compras:hover {
     background-color: #1976d2;
     transform: scale(1.05);
 }
