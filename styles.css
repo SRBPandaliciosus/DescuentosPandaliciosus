@@ -36,6 +36,12 @@ header {
     object-fit: cover;
 }
 
+.header-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
 .header-text h1 {
     margin: 0;
     font-size: 1.8rem;
