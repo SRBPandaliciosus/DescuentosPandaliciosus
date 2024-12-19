@@ -30,3 +30,51 @@ function updateVisitCount() {
 
 // Actualiza el contador al cargar la página
 document.addEventListener('DOMContentLoaded', updateVisitCount);
+
+// Motor de búsqueda
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+
+    if (query && window.location.pathname.endsWith('resultados.html')) {
+        performSearch(query);
+    }
+});
+
+function performSearch(query) {
+	console.log('Buscando:', query);  // Asegúrate de que el query se está capturando
+    const pages = ['bancos.html', 'compras.html', 'redes_sociales.html', 'juegos.html'];
+    const resultsContainer = document.getElementById('results');
+    resultsContainer.innerHTML = `<p>Buscando: <strong>${query}</strong></p>`;
+
+    const resultsList = document.createElement('ul');
+    let resultsFound = false;
+
+    pages.forEach(page => {
+        fetch(page)
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                // Busca la palabra clave en el texto
+                const matches = Array.from(doc.body.querySelectorAll('*')).filter(el =>
+                    el.textContent.includes(query)
+                );
+
+                if (matches.length > 0) {
+                    resultsFound = true;
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<a href="${page}" target="_blank">${page} (${matches.length} coincidencias)</a>`;
+                    resultsList.appendChild(listItem);
+                }
+            })
+            .catch(err => console.error(`Error buscando en ${page}:`, err))
+            .finally(() => {
+                if (!resultsFound) {
+                    resultsContainer.innerHTML += '<p>No se encontraron resultados.</p>';
+                }
+                resultsContainer.appendChild(resultsList);
+            });
+    });
+}
