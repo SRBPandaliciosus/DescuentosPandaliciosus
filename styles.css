@@ -147,6 +147,40 @@ section#promos {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+section#search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#searchForm {
+    display: flex;
+    gap: 10px;
+}
+
+#searchForm input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchForm button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#searchForm button:hover {
+    background-color: #0056b3;
+}
+
 .promo {
     background-color: #f8f9fa;
     margin: 10px 0;
