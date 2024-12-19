@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function performSearch(query) {
 	console.log('Buscando:', query);  // Asegúrate de que el query se está capturando
+	// Convierte el término de búsqueda a minúsculas
+    const lowerCaseQuery = query.toLowerCase();
     const pages = ['bancos.html', 'compras.html', 'redes_sociales.html', 'juegos.html'];
     const resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = `<p>Buscando: <strong>${query}</strong></p>`;
