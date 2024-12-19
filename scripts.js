@@ -59,9 +59,9 @@ function performSearch(query) {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
 
-                // Busca la palabra clave en el texto
+                // Filtra los elementos para encontrar coincidencias ignorando mayúsculas y minúsculas
                 const matches = Array.from(doc.body.querySelectorAll('*')).filter(el =>
-                    el.textContent.includes(query)
+                    el.textContent.toLowerCase().includes(lowerCaseQuery)  // Compara en minúsculas
                 );
 
                 if (matches.length > 0) {
