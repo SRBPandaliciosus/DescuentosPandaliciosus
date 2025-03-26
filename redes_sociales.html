@@ -6,24 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Códigos Promocionales - Redes Sociales</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .tiktok-container {
-            width: 350px;
-            height: 450px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        .tiktok-embed {
-            width: 100% !important;
-            height: 100% !important;
-            transform: scale(0.85);
-            transform-origin: center;
-            position: absolute;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -71,6 +53,7 @@
                             console.log("Fila de datos procesada:", row);
 
                             const [nombre, codigo, descuento, caducidad, imagen, url, bases, tiktok, logo] = row;
+                            const videoId = tiktok ? new URL(tiktok).pathname.split("/").pop() : "";
 
                             const promoDiv = document.createElement("div");
                             promoDiv.classList.add("promo");
@@ -87,14 +70,13 @@
                                             <button class="link-button">IR A LA WEB</button>
                                         </a>
                                         ${bases ? `<a href="${bases}" target="_blank"><button class="link-button">Abrir Bases legales</button></a>` : ""}
-                                    </div>
-                                    ${tiktok ? `<div class="tiktok-container">
-                                        <blockquote class="tiktok-embed" cite="${tiktok}" data-video-id="${tiktok.split('/').pop()}">
-                                            <section>
-                                                <a target="_blank" title="@pandaliciosus" href="https://www.tiktok.com/@pandaliciosus?refer=embed">@pandaliciosus</a>
-                                            </section>
-                                        </blockquote>
-                                    </div>` : ""}
+                                        ${tiktok ? `
+                                            <blockquote class="tiktok-embed" cite="${tiktok}" data-video-id="${videoId}" style="max-width: 300px; min-width: 120px;">
+                                                <section>
+                                                    <a target="_blank" title="@pandaliciosus" href="https://www.tiktok.com/@pandaliciosus?refer=embed">@pandaliciosus</a>
+                                                </section>
+                                            </blockquote>` : ""}
+                                    </div>  
                                 </div>
                             `;
                             promoSection.appendChild(promoDiv);
@@ -117,6 +99,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
